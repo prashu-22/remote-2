@@ -2,7 +2,9 @@
   "name": "react-remote-2",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack serve"
+    "start": "webpack serve --config webpack.config.local.js",
+  "build": "webpack --config webpack.config.prod.js",
+  "preview": "serve -s dist -l 3002"
   },
   "dependencies": {
     "react": "^19.2.3",
