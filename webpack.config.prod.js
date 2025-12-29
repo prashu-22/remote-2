@@ -8,7 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
-    publicPath: "/https://remote-2-prashu.vercel.app/",
+    publicPath: "https://remote-2-prashu.vercel.app/",
     clean: true,
   },
   module: {
