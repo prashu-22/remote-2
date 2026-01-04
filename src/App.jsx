@@ -1,11 +1,12 @@
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, NavLink, MemoryRouter, useLocation } from "react-router-dom";
 
 const Random = () => <p>🎲 Random page from Remote 2.</p>;
 const About = () => <p>ℹ️ Second remote application.</p>;
 
-export default function App() {
+export default function App({ standalone = true,basename="" }) {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={standalone ? "/" : basename}>
       <div style={remoteStyles.container}>
         <h2>React Remote App 2</h2>
 
@@ -18,8 +19,8 @@ export default function App() {
         <div style={remoteStyles.card}>
           <Routes>
             <Route index  element={<p>🏠 Remote 2 Home</p>} />
-            <Route path="/random" element={<Random />} />
-            <Route path="/about" element={<About />} />
+            <Route path="random" element={<Random />} />
+            <Route path="about" element={<About />} />
           </Routes>
         </div>
       </div>
